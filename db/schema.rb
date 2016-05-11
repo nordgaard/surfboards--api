@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511203558) do
+ActiveRecord::Schema.define(version: 20160511213023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "surfboards", force: :cascade do |t|
-    t.integer  "height"
-    t.integer  "width"
+    t.integer  "feet"
+    t.integer  "inches"
     t.string   "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

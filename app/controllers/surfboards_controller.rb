@@ -23,7 +23,7 @@ class SurfboardsController < ApplicationController
  def destroy
   @surfboard = Surfboard.find_by(id: params[:id])
   @surfboard.destroy
-  render :index
+  render json:"Surfboard Deleted"
 end
 
 end
