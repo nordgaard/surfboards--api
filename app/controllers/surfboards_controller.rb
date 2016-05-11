@@ -7,7 +7,6 @@ class SurfboardsController < ApplicationController
     @surfboard = Surfboard.find_by(id: params[:id])
   end
 
-
   def create
     @surfboard = Surfboard.new(name: params[:name], height: params[:height], width: params[:height], color: params[:color])
     @surfboard.save
@@ -23,8 +22,8 @@ class SurfboardsController < ApplicationController
 
  def destroy
   @surfboard = Surfboard.find_by(id: params[:id])
-   @surfboard.destroy
-   render :index
- end
+  @surfboard.destroy
+  render :index
+end
 
 end

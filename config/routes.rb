@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get '/surfboards', to: 'surfboards#index'
   get '/surfboards/:id', to: 'surfboards#show'
   post '/surfboards', to: 'surfboards#create'
