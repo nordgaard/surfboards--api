@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gnar_factor: MyString
+  surfboard_id: 1
+
+two:
+  name: MyString
+  gnar_factor: MyString
+  surfboard_id: 1
