@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  
-  get '/surfboards', to: 'surfboards#index'
-  get '/surfboards/:id', to: 'surfboards#show'
-  post '/surfboards', to: 'surfboards#create'
-  patch '/surfboards/:id', to: 'surfboards#update'
-  delete '/surfboards/:id', to: 'surfboards#destroy'
+  namespace :api do
+    namespace :v1 do
+    get '/surfboards', to: 'surfboards#index'
+    get '/surfboards/:id', to: 'surfboards#show'
+    post '/surfboards', to: 'surfboards#create'
+    patch '/surfboards/:id', to: 'surfboards#update'
+    delete '/surfboards/:id', to: 'surfboards#destroy'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
