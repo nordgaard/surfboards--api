@@ -1,0 +1,35 @@
+<div ng-app="app">
+  <div ng-controller="surfboardCtrl" ng-init="setup()">
+  <ul>
+    <li ng-repeat="error in errors">{{ error }}</li>
+  </ul>
+  <p>
+    Name<input ng-model="name">
+    Feet<input ng-model="feet">
+    Inches<input ng-model="inches">
+    Color<input ng-model="color">
+    <button ng-click="addSurfboard(name,feet, inches, color)">Add Surfboard</button>
+  </p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Feet</th>
+      <th>Inches</th>
+      <th>Color</th>
+      <th>Delete Board</th>
+    </tr>
+
+    Name<input ng-model = "nameFilter">
+    Feet<input ng-model = "feetFilter">
+    <tr ng-repeat="surfboard in surfboards | filter: {name: nameFilter, feet: feetFilter}">    
+      <td>{{surfboard.name}}</td>
+      <td>{{surfboard.feet}}</td>
+      <td>{{surfboard.inches}}</td>
+      <td>{{surfboard.color}}</td>
+      <td><button ng-click="deleteSurfboard(surfboard)">Delete Me!</button> </td>
+    </tr>
+  </table>
+
+
+  </div>
+</div>

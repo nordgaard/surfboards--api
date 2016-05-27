@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
+get "/", to: 'surfboards#index'
   namespace :api do
     namespace :v1 do
-    get '/surfboards', to: 'surfboards#index'
-    get '/surfboards/:id', to: 'surfboards#show'
-    post '/surfboards', to: 'surfboards#create'
-    patch '/surfboards/:id', to: 'surfboards#update'
-    delete '/surfboards/:id', to: 'surfboards#destroy'
+      resources :surfboards
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

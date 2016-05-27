@@ -9,8 +9,11 @@ class Api::V1::SurfboardsController < ApplicationController
 
   def create
     @surfboard = Surfboard.new(name: params[:name], feet: params[:feet], inches: params[:inches], color: params[:color])
-    @surfboard.save
-    render :show
+    if @surfboard.save
+      render :show
+    else
+      render json: {errors: @surfboard.errors.full_messages}, status: 422
+    end
   end
 
   def update
@@ -23,7 +26,7 @@ class Api::V1::SurfboardsController < ApplicationController
  def destroy
   @surfboard = Surfboard.find_by(id: params[:id])
   @surfboard.destroy
-  render json:"Surfboard Deleted"
+  render json:{message: "Surfboard Deleted"}
 end
-  
+
 end
