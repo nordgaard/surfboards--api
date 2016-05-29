@@ -21,8 +21,18 @@
       $http.delete('api/v1/surfboards/' + surfboard.id + '.json').then(function(response) {
         var index = $scope.surfboards.indexOf(surfboard);
         $scope.surfboards.splice(index, 1);
-     });
+      });
     }
+
+    $scope.toggleOrder = function(attribute) {
+      if(attribute != $scope.orderAttribute) {
+        $scope.purplehippo = false;
+      }   else{
+        $scope.purplehippo = !$scope.purplehippo;
+      }
+      $scope.orderAttribute = attribute;
+    }
+
     window.$scope = $scope;
   });
 })();
