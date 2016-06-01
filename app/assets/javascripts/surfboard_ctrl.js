@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  angular.module("app").controller("surfboardCtrl", function($scope, $http) {
+  angular.module("app").controller("surfboardCtrl", ['$scope', 'http', function($scope, $http) {
 
     $scope.setup = function() {
       $http.get('/api/v1/surfboards.json').then(function(response) {
@@ -34,5 +34,6 @@
     }
 
     window.$scope = $scope;
-  });
+  }]);
+  surfboardCtrl.$inject = ['$scope', '$http'];
 })();

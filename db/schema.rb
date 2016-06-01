@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511214255) do
+ActiveRecord::Schema.define(version: 20160601021709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20160511214255) do
     t.string   "name"
     t.string   "gnar_factor"
     t.integer  "surfboard_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "api_key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

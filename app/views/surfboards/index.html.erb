@@ -3,13 +3,18 @@
     <ul>
       <li ng-repeat="error in errors">{{ error }}</li>
     </ul>
-    <p>
+    <div> 
       Name<input ng-model="name">
       Feet<input ng-model="feet">
       Inches<input ng-model="inches">
       Color<input ng-model="color">
       <button ng-click="addSurfboard(name,feet, inches, color)">Add Surfboard</button>
-    </p>
+    </div>
+     
+      <datalist id="names">
+        <option ng-repeat="surfboard in surfboards">{{ surfboard.name }}</option>
+      </datalist>
+  
     <table>
       <tr>
         <th ng-click="toggleOrder('name')">Name</th>
@@ -19,7 +24,8 @@
         <th>Delete Board</th>
       </tr>
 
-      Name<input ng-model = "nameFilter">
+
+      Name<input ng-model = "nameFilter" list="names">
       Feet<input ng-model = "feetFilter">
       <tr ng-repeat="surfboard in surfboards | filter: {name: nameFilter, feet: feetFilter} | orderBy: orderAttribute:purplehippo">    
         <td>{{surfboard.name}}</td>
